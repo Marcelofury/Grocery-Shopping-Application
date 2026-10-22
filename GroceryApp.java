@@ -51,6 +51,28 @@ public class GroceryApp{
                     }
                     break;
 
+                    case 2:
+                        System.out.println("\n--- YOUR SHOPPING CART");
+                        double total = 0;
+                        boolean isEmpty = true;
+                        for(int i =0; i < cartQuantities.length; i++){
+                            if (cartQuantities[i] > 0){
+                                double cost = cartQuantities[i] * productPrices[i];
+                                total += cost;
+                                System.out.println(productNames[i] + " x " + cartQuantities[i] + " = $" + String.format("%..2f", cost));
+                                isEmpty = false; 
+                            }
+
+                        }
+                        if(isEmpty){
+                            System.out.println("Your cart is Empty");
+                            
+                        } else {
+                            System.out.println("Total Amount: $" + String.format("%.2f",total));
+
+                        }
+                        break;
+
                     
             }
         }
