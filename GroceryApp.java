@@ -73,6 +73,24 @@ public class GroceryApp{
                         }
                         break;
 
+                        case 3:
+                            double finalTotal = 0;
+                            System.out.println("\n---CHECKOUT RECEIPT ---");
+                            for (int i = 0; i < cartQuantities.length; i++){
+                                if(cartQuantities[i] > 0){
+                                    double cost = cartQuantities[i] * productPrices[i];
+                                    finalTotal += cost;
+                                    System.out.println(productNames[i] + " x " + cartQuantities[i] + " $" + String.format("%.2f", cost));
+
+                                }
+                            }
+                            System.out.println("Grand Total: $" + String.format("%.2f", finalTotal));
+                            System.out.println("Thank you for shopping with us!");
+                            running = false;
+                            break;
+
+                        
+
                     
             }
         }
