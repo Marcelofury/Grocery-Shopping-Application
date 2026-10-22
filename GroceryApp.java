@@ -22,6 +22,37 @@ public class GroceryApp{
             System.out.println("3. Checkout");
             System.out.println("4. Exit");
             System.out.println("Choose an option: ");
+
+            int choice = scanner.nextInt();
+
+            switch (choice){
+                case 1:
+                    System.out.println("\n--- AVAILABLE PRODUCTS ---");
+                    for(int i = 0; i < productNames.length; i++){
+                        System.out.println((i + 1) + ". " + productNames[i] + " -$" + productPrices[i] + "Stock: " + productStock[i] +")");
+
+                    }
+                    System.out.print("Enter product number to buy (or 0 to go back): ")
+                    int prodIndex = scanner.nextInt() -1;
+
+                    if (prodIndex >= 0 && prodIndex < productNames.length){
+                        System.out.print("Enter quantity: ");
+                        int qty = scanner.nextInt();
+
+                        if (qty > 0 && qty <= productStock[prodIndex]){
+                            cartQuantities[prodIndex] += qty;
+                            productStock[prodIndex] -= qty;
+                            System.out.println("Added " + qty + " " + productNames[prodIndex] + "(s) to your cart".);
+                        } else {
+                            System.out.println("Invalid quantity or insufficient stock.");
+                        }
+
+                    
+                    }
+                    break;
+
+                    
+            }
         }
     }
 }
