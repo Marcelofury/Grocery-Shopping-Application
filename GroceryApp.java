@@ -89,10 +89,19 @@ public class GroceryApp{
                             running = false;
                             break;
 
-                        
+                        case 4:
+                            System.out.println("Exiting Application.Goodbye!");
+                            running = false;
+                            break;
+
+                        default:
+                            System.out.println("Invalid option. Please try again.");
+
 
                     
             }
         }
+
+        scanner.close();
     }
 }
